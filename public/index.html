@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+    <head>
+        <title>SweetGallery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="/components/bootstrap/docs/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="/components/bootswatch/spacelab/bootstrap.css">
+        <script src="/components/angular/angular.min.js"></script>
+        <script src="/app/app.js"></script>
+    </head>
+    <body>
+        <div data-ng-controller="GalleryListCtrl">
+            List:
+            <ul>
+                <li data-repeat="gallery in galleries" data-ng-click="doIt()">
+                    name: {{gallery.name}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
