@@ -26,12 +26,10 @@ server.get '/galleries', (req, res, next) ->
         next()
 
 server.get '/galleries/:id', (req, res, next) ->
-    Gallery.findById(req.params.id, (err, gallery) ->
+    Gallery.findById req.params.id, (err, gallery) ->
         next(err) if err
         res.send gallery if gallery
-
         next()
-    )
 
 server.post '/galleries', (req, res, next) ->
     gallery = new Gallery(req.params)

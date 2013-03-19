@@ -1,0 +1,18 @@
+{
+  "name": "SweetGallery",
+  "version": "0.0.0",
+  "description": "SweetGallery ============",
+  "main": "server.js",
+  "dependencies": {
+    "mongoose": "~3.6.0",
+    "restify": "~2.3.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kamilbiela/SweetGallery.git"
+  },
+  "author": "Kamil Biela",
+  "license": "",
+  "readmeFilename": "README.md"
+}
