@@ -1,7 +1,7 @@
 <div class="container">
     <div class="span12">
         <div class="well-small">
-            <form name="form" data-ng-submit="formSubmit()">
+            <form name="form" data-ng-submit="formSubmit()" novalidate="novalidate">
                 <fieldset>
                     <label>Gallery name</label>
                     <input 
@@ -9,9 +9,8 @@
                         data-ng-model="gallery.name"
                         required
                     >
-
-                    <button type="submit" class="btn">Submit</button>
                 </fieldset>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </div>
     </div>
