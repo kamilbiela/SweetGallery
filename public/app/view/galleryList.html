@@ -10,8 +10,9 @@
                 <a href="#" class="thumbnail">
                     <img src="http://placehold.it/300x200" alt="">
                 </a>
+                {{gallery.name}}
                 <div data-ng-class="{hide: !buttonsVisible}" class="buttons">
-                    <a href="#" class="btn btn-mini button-edit">Edit</a>
+                    <a data-ng-href="#/gallery/edit/{{gallery._id}}" class="btn btn-mini button-edit">Edit</a>
                     <a href="#" class="btn btn-danger btn-mini button-delete">Delete</a>
                 </div>
             </li>

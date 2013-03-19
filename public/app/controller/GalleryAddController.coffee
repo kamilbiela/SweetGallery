@@ -1,7 +1,7 @@
-GalleryAddController = ($scope, $resource) ->
+GalleryAddController = ($scope, $resource, GalleryResource) ->
 
-    $scope.gallery = {name: "asd"}
+    $scope.gallery = {}
     
     $scope.formSubmit = ->
-        alert(123)
-        console.log $scope.gallery
+        GalleryResource.save $scope.gallery, (gallery, resHeaders) ->
+            console.log 'SAVED!'
