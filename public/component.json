@@ -4,6 +4,7 @@
   "dependencies": {
     "angular": "~1.0.5",
     "bootstrap": "~2.3.1",
-    "bootswatch": "~2.3.1"
+    "bootswatch": "~2.3.1",
+    "angular-resource": "~1.0.5"
   }
 }

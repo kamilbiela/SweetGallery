@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html data-ng-app="">
+<html data-ng-app="sweetGalleryApp">
     <head>
         <title>SweetGallery</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="/components/bootstrap/docs/assets/css/bootstrap.css">
         <link rel="stylesheet" href="/components/bootswatch/spacelab/bootstrap.css">
+        <link rel="stylesheet" href="/css/style.css">
         <script src="/components/angular/angular.min.js"></script>
+        <script src="/components/angular-resource/angular-resource.min.js"></script>
         <script src="/app/app.js"></script>
     </head>
     <body>
-        <div data-ng-controller="GalleryListCtrl">
-            List:
-            <ul>
-                <li data-repeat="gallery in galleries" data-ng-click="doIt()">
-                    name: {{gallery.name}}
-                </li>
-            </ul>
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="span12">
+                        <a class="brand" href="#">SweetGallery</a>
+                        <ul class="nav">
+                            <li><a data-ng-href="#/gallery/add">Add</a></li>
+                            <li><a href="#">Link</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <div data-ng-view></div>
     </body>
 </html>

@@ -1,14 +1,19 @@
 'use strict';
 
-GalleryApp = angular.module('galleryApp')
+sweetGalleryApp = angular.module('sweetGalleryApp', ['ngResource'])
 
-GalleryApp.config ($routeProvider) ->
-    $routeProvider.
-        when('/', 
+sweetGalleryApp.config ($routeProvider) ->
+    $routeProvider
+        .when('/', 
             controller: 'GalleryListController',
-            templateUrl: 'view/galleryList.html'
-        ).       
-        when('/help', {
-            templateUrl: 'views/help.html'
-        });
+            templateUrl: 'app/view/galleryList.html'
+        )
+        .when('/gallery/add', {
+            controller: 'GalleryAddController',
+            templateUrl: 'app/view/galleryAdd.html'
+        })
+        .when('/gallery/edit/:id', {
+            templateUrl: 'app/view/galleryEdit.html'
+        })
+        ;
 

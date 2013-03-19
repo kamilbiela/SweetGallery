@@ -1,8 +1,9 @@
-GalleryListController = ($scope) ->
-    $scope.galleries = [
-        {name: "gaal112"}
-        {name: "gal2"}
-    ] 
+GalleryListController = ($scope, $resource, GalleryResource) ->
     
-    $scope.doIt = ->
-        alert '123'
+    $scope.galleries = GalleryResource.query {}
+    
+    $scope.showButtons = ($scope) ->
+        $scope.buttonsVisible = true
+        
+    $scope.hideButtons = ($scope) ->
+        $scope.buttonsVisible = false

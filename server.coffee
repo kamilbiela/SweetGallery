@@ -1,9 +1,9 @@
 restify = require('restify')
 
 server = restify.createServer()
-server.get '/', (req, res, next) ->
+server.get '/galleries', (req, res, next) ->
 
-    galleries = ({name: "name123" + i} for i in [1..10])
+    galleries = ({name: "name" + i} for i in [1..10])
     res.send galleries    
     next()
     
