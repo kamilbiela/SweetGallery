@@ -1,9 +1,4 @@
 SweetGallery
 ============
 
-
-app.js
-controllers
-directives
-filters
-services
+learning node.js + angular.js
