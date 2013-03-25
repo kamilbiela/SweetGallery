@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html data-ng-app="sweetGalleryApp">
+<html data-ng-app="SweetGalleryApp">
     <head>
         <title>SweetGallery</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="/components/bootstrap/docs/assets/css/bootstrap.css">
         <link rel="stylesheet" href="/components/bootswatch/spacelab/bootstrap.css">
         <link rel="stylesheet" href="/css/style.css">
+        
+        <script src="/components/jquery/jquery.min.js"></script>
         <script src="/components/angular/angular.min.js"></script>
+        <script src="/components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+        <script src="/components/angular-strap.min.js"></script>
         <script src="/components/angular-resource/angular-resource.min.js"></script>
+        
         <script src="/app/app.js"></script>
     </head>
     <body>
@@ -17,9 +22,7 @@
                     <div class="span12">
                         <a class="brand" href="#">SweetGallery</a>
                         <ul class="nav">
-                            <li><a data-ng-href="#/gallery/add">Add</a></li>
-                            <li><a href="#">Link</a></li>
-
+                            <li><a data-ng-href="#/gallery/add">Add new gallery</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h3>Confirm Deletion</h3>
+</div>
+<div class="modal-body">
+    Are You sure that You want delete gallery "{{gallery.name}}"? 
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn" data-ng-click="dismiss()">
+        Close
+    </button>
+    <button class="btn btn-warning" data-ng-click="deleteGallery(gallery);dismiss()">
+        Delete
+    </button> 
+</div>

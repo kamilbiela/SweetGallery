@@ -1,7 +1,7 @@
-GalleryAddController = ($scope, $resource, GalleryResource) ->
+GalleryAddController = ($scope, $resource, $location, GalleryResource) ->
 
     $scope.gallery = {}
     
     $scope.formSubmit = ->
         GalleryResource.save $scope.gallery, (gallery, resHeaders) ->
-            console.log 'SAVED!'
+            $location.path('/')

@@ -1,8 +1,8 @@
 'use strict';
 
-sweetGalleryApp = angular.module('sweetGalleryApp', ['ngResource'])
+SweetGalleryApp = angular.module('SweetGalleryApp', ['ngResource', '$strap.directives'])
 
-sweetGalleryApp.config ($routeProvider) ->
+SweetGalleryApp.config ($routeProvider) ->
     $routeProvider
         .when('/', 
             controller: 'GalleryListController'
@@ -12,7 +12,7 @@ sweetGalleryApp.config ($routeProvider) ->
             controller: 'GalleryAddController'
             templateUrl: 'app/view/galleryAdd.html'
         })
-        .when('/gallery/edit/:id', {
+        .when('/gallery/edit/:_id', {
             controller: 'GalleryEditController'
             templateUrl: 'app/view/galleryAdd.html'
         })

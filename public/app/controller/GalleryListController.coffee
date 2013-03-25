@@ -1,9 +1,14 @@
-GalleryListController = ($scope, $resource, GalleryResource) ->
+GalleryListController = ($scope, $resource, $window, $location, GalleryResource) ->
     
     $scope.galleries = GalleryResource.query {}
     
-    $scope.showButtons = ($scope) ->
-        $scope.buttonsVisible = true
+    $scope.showButtons = (loopScope) ->
+        loopScope.buttonsVisible = true
         
-    $scope.hideButtons = ($scope) ->
-        $scope.buttonsVisible = false
+    $scope.hideButtons = (loopScope) ->
+        loopScope.buttonsVisible = false
+        
+    $scope.deleteGallery = (gallery) ->
+        gallery.$remove (gallery, responseHeaders) ->
+            gallery.isDeleted = true
+

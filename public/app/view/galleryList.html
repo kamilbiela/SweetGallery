@@ -6,6 +6,7 @@
                 data-ng-repeat="gallery in galleries" 
                 data-ng-mouseenter="showButtons(this)"
                 data-ng-mouseleave="hideButtons(this)"
+                data-ng-hide="gallery.isDeleted"
             >
                 <a href="#" class="thumbnail">
                     <img src="http://placehold.it/300x200" alt="">
@@ -13,7 +14,13 @@
                 {{gallery.name}}
                 <div data-ng-class="{hide: !buttonsVisible}" class="buttons">
                     <a data-ng-href="#/gallery/edit/{{gallery._id}}" class="btn btn-mini button-edit">Edit</a>
-                    <a href="#" class="btn btn-danger btn-mini button-delete">Delete</a>
+                    <a 
+                        type="button"
+                        class="btn btn-danger btn-mini button-delete"
+                        data-bs-modal="'app/view/galleryListPopupDelete.html'"
+                    >
+                        Delete
+                    </a>
                 </div>
             </li>
         </ul>
