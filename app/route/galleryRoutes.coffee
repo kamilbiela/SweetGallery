@@ -6,28 +6,13 @@ Gallery = mongoose.model 'Gallery'
 
 
 server.get '/galleries', (req, res, next) ->
-    Gallery.find (err, galleries) ->
+    q = Gallery.find()
+        .where('images').slice(1)
+
+    q.exec (err, galleries) ->
         next(err) if err        
         res.send galleries
         next()
-
-    #fun fun ;)
-
-    # Gallery.aggregate(
-    #     { $unwind: "$images" },
-
-    #     {$project:
-    #         _id: 1
-    #         name: 1
-    #         image: {$first: "$images"}
-    #     },
-
-    #     (err, galleries) ->
-    #         next(err) if err
-    #         res.send galleries
-    #         next()
-    # )    
-
 
 
 server.get '/galleries/:_id', (req, res, next) ->
