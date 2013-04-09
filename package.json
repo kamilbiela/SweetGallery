@@ -6,7 +6,9 @@
   "dependencies": {
     "mongoose": "~3.6.0",
     "restify": "~2.3.4",
-    "coffee-script": "~1.6.2"
+    "coffee-script": "~1.6.2",
+    "node-uuid": "~1.4.0",
+    "mime": "~1.2.9"
   },
   "devDependencies": {},
   "repository": {

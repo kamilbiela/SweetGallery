@@ -1,5 +1,13 @@
 <div class="container">
     <div class="span12">
+        <h1 data-ng-show="gallery._id">
+            Edit gallery {{gallery.name}}
+        </h1>
+        
+        <h1 data-ng-show="!gallery._id">
+            Add new gallery
+        </h1>
+        
         <div class="well-small">
             <form name="form" data-ng-submit="formSubmit()" novalidate="novalidate">
                 <fieldset>

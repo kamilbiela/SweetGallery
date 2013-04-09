@@ -1,9 +1,9 @@
 mongoose = require 'mongoose'
 
-# schema
 GallerySchema = mongoose.Schema
     name:  String
-    
+    images: [require './Image']
+
 Gallery = mongoose.model 'Gallery', GallerySchema
 
-module.exports = Gallery
+module.exports = GallerySchema
