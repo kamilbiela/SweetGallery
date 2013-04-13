@@ -1,3 +1,3 @@
 #!/bin/bash
 
-coffee -w -b --join public/app/app.js --compile public/app/
+coffee -w -b --join app/app.js --compile app/
