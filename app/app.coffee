@@ -1,5 +1,3 @@
-'use strict';
-
 SweetGalleryApp = angular.module('SweetGalleryApp', ['ngResource', '$strap.directives', 'ngUpload'])
 
 SweetGalleryApp.config ($routeProvider) ->
