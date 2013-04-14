@@ -19,3 +19,4 @@ npm-debug.log
 /app/app.js
 /uploads/*
 /nbproject
+test-results.xml
