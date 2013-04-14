@@ -11,6 +11,7 @@ files = [
     "components/angular-resource/angular-resource.js",
     "components/angular-mocks/angular-mocks.js",
     "components/angular-strap/dist/angular-strap.js",
+    "components/ngUpload/ng-upload.js",
     "vendor/ng-upload.js",
     'app/app.js',
     'test/**/*Spec.coffee'

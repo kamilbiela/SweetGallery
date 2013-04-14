@@ -8,6 +8,7 @@
     "angular-resource": "git://github.com/angular/bower-angular-resource.git#~1.0.5",
     "jquery": "git://github.com/components/jquery.git#~1.9.1",
     "angular-mocks": "~1.0.6",
-    "angular-strap": "~0.7.2"
+    "angular-strap": "~0.7.2",
+    "ngUpload": "git://github.com/twilson63/ngUpload.git"
   }
 }
