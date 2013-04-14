@@ -15,7 +15,7 @@ npm-debug.log
 
 /*.js
 /node_modules
-/public/components
-/public/app/app.js
-/public/uploads/*
+/components
+/app/app.js
+/uploads/*
 /nbproject

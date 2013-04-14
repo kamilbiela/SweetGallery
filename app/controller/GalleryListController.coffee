@@ -1,4 +1,4 @@
-GalleryListController = ($scope, $resource, $window, $location, GalleryResource) ->
+GalleryListController = ($scope, $window, $location, GalleryResource) ->
     
     $scope.galleries = GalleryResource.query {}
     
