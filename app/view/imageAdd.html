@@ -4,17 +4,17 @@
             {{gallery.name}}
         </h1>
         <div class="well-small">
-            <form name="form" ng-upload novalidate="novalidate" action="/api/images" method="post" enctype="multipart/form-data">
+            <form name="form" ng-upload novalidate="novalidate" action="/api/galleries/{{gallery.id}}/images" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <label>Image name</label>
                     <input 
                         type="text" 
-                        data-ng-model="gallery.name"
+                        data-ng-model="image.name"
                         required
                         name="name"
                     >
                     <label>File</label>
-                    <input type="file" name="imageFile">
+                    <input type="file" name="file">
                     
                 </fieldset>
                 <button upload-submit="uploadComplete(contents, completed)" type="submit" class="btn">Submit</button>

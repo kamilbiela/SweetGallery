@@ -11,12 +11,15 @@
                 data-ng-mouseleave="hideButtons(this)"
                 data-ng-hide="gallery.isDeleted"
             >
-                <a data-ng-href="#/gallery/{{gallery._id}}/images" class="thumbnail">
-                    <img src="http://placehold.it/300x200" alt="">
+                <a data-ng-href="#/gallery/{{gallery.id}}/images" class="thumbnail">
+                    <span data-ng-switch="hasImage(gallery)">
+                        <img data-ng-switch-when="false" data-ng-src="/images/placeholder.png"    alt="{{gallery.name}}">
+                        <img data-ng-switch-default      data-ng-src="{{gallery.images[0].file}}" alt="{{gallery.name}}">
+                    </span>
                 </a>
                 {{gallery.name}}
                 <div data-ng-class="{hide: !buttonsVisible}" class="buttons">
-                    <a data-ng-href="#/gallery/edit/{{gallery._id}}" class="btn btn-mini button-edit">Edit</a>
+                    <a data-ng-href="#/gallery/edit/{{gallery.id}}" class="btn btn-mini button-edit">Edit</a>
                     <a 
                         class="btn btn-danger btn-mini button-delete"
                         data-bs-modal="'app/view/galleryListPopupDelete.html'"

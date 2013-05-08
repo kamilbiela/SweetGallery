@@ -1,4 +1,4 @@
-describe "ImageListControllerSpec", ->
+describe "ImageListControllerSpec - with images", ->
 
     $httpBackend = null
     $routeParams = null
@@ -13,10 +13,10 @@ describe "ImageListControllerSpec", ->
         $routeParams.galleryId = 1
 
         $httpBackend.expectGET('/api/galleries/1').respond 200,
-            _id: 1
+            id: 1
             name: 'Gallery name'
             images: [
-                {_id: 1, name: 'imagename'}
+                {id: 1, name: 'imagename'}
             ]
 
         $scope = $rootScope.$new()
@@ -26,14 +26,14 @@ describe "ImageListControllerSpec", ->
 
     afterEach ->
         $httpBackend.verifyNoOutstandingExpectation()
-        $httpBackend.verifyNoOutstandingRequest()   
+        $httpBackend.verifyNoOutstandingRequest()
 
     it 'Should get gallery with images', ->
         $httpBackend.flush()
 
     xit 'should invoke delete call api', ->
+        setHttpBackendGet()
         $httpBackend.flush()
-
         #@todo
         $scope.deleteImage($scope.gallery.images[0])
 

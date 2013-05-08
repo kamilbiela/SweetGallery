@@ -4,6 +4,9 @@ GalleryListController = ($scope, $window, $location, GalleryResource) ->
     
     $scope.showButtons = (loopScope) ->
         loopScope.buttonsVisible = true
+
+    $scope.hasImage = (gallery) ->
+       gallery.hasImages()
         
     $scope.hideButtons = (loopScope) ->
         loopScope.buttonsVisible = false

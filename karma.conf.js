@@ -12,9 +12,8 @@ files = [
     "components/angular-mocks/angular-mocks.js",
     "components/angular-strap/dist/angular-strap.js",
     "components/ngUpload/ng-upload.js",
-    "vendor/ng-upload.js",
     'app/app.js',
-    'test/**/*Spec.coffee'
+    'spec/**/*Spec.coffee'
 ];
 
 
@@ -23,11 +22,19 @@ exclude = [
   
 ];
 
+preprocessors = {
+    '**/*.coffee': 'coffee',
+    'app/*.js': 'coverage'
+};
 
 // test results reporter to use
 // possible values: 'dots', 'progress', 'junit'
-reporters = ['progress'];
+reporters = ['progress', 'coverage'];
 
+coverageReporter = {
+    type : 'html',
+    dir: 'coverage/'
+};
 
 // web server port
 port = 9876;

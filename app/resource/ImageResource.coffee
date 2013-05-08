@@ -1,2 +1,4 @@
 SweetGalleryApp.factory 'ImageResource', ($resource) ->
-    $resource '/api/images/:_id', {_id: '@_id'}
+    image = $resource '/api/images/:id', {id: '@id'}
+
+    return image

@@ -10,7 +10,7 @@ SweetGalleryApp.config ($routeProvider) ->
             controller: 'GalleryAddController'
             templateUrl: 'app/view/galleryAdd.html'
         )
-        .when('/gallery/edit/:_id', 
+        .when('/gallery/edit/:id', 
             controller: 'GalleryEditController'
             templateUrl: 'app/view/galleryAdd.html'
         )

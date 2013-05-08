@@ -1,2 +1,12 @@
 SweetGalleryApp.factory 'GalleryResource', ($resource) ->
-    $resource '/api/galleries/:_id', {_id: '@_id'}
+    gallery = $resource '/api/galleries/:id', {id: '@id'}
+
+    gallery::hasImages = ->
+        return false if not @images
+        
+        if @images.length > 0
+            true
+        else
+            false
+
+    return gallery

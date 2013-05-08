@@ -20,3 +20,4 @@ npm-debug.log
 /uploads/*
 /nbproject
 test-results.xml
+/coverage/*
