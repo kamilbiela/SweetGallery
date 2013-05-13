@@ -3,6 +3,7 @@
         <h1>
             Gallery list
         </h1>
+        <hr>
         <ul class="thumbnails">
             <li 
                 class="span4" 
@@ -14,7 +15,7 @@
                 <a data-ng-href="#/gallery/{{gallery.id}}/images" class="thumbnail">
                     <span data-ng-switch="hasImage(gallery)">
                         <img data-ng-switch-when="false" data-ng-src="/images/placeholder.png"    alt="{{gallery.name}}">
-                        <img data-ng-switch-default      data-ng-src="{{gallery.images[0].file}}" alt="{{gallery.name}}">
+                        <img data-ng-switch-default      data-ng-src="{{gallery.images[0].thumbnail}}" alt="{{gallery.name}}">
                     </span>
                 </a>
                 {{gallery.name}}
