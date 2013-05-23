@@ -1,10 +1,10 @@
 <div class="container">
     <div class="span12">
-        <h1 data-ng-show="gallery.id">
+        <h1 data-ng-hide="isNew">
             Edit gallery {{gallery.name}}
         </h1>
         
-        <h1 data-ng-show="!gallery.id">
+        <h1 data-ng-show="isNew">
             Add new gallery
         </h1>
         

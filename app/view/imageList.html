@@ -17,17 +17,17 @@
         <ul class="thumbnails">
             <li 
                 class="span4" 
-                data-ng-repeat="image in gallery.images" 
+                data-ng-repeat="image in images"
                 data-ng-mouseenter="showButtons(this)"
                 data-ng-mouseleave="hideButtons(this)"
                 data-ng-hide="image.isDeleted"
             >
-                <div class="thumbnail">
+                <a class="thumbnail" data-bs-modal="'app/view/imagePopup.html'">
                     <img data-ng-src="{{image.thumbnail}}" alt="{{image.name}}">
-                </div>
+                </a>
                 {{image.name}}
                 <div data-ng-class="{hide: !buttonsVisible}" class="buttons">
-                    <a data-ng-href="#/image/{{gallery.id}}/edit/{{image.id}}" class="btn btn-mini button-edit">Edit</a>
+                    <a data-ng-href="#/gallery/{{gallery.id}}/images/edit/{{image.id}}" class="btn btn-mini button-edit">Edit</a>
                     <a class="btn btn-danger btn-mini button-delete" data-bs-modal="'app/view/imageListPopupDelete.html'">
                         Delete
                     </a>

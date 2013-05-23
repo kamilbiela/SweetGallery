@@ -13,9 +13,9 @@
                 data-ng-hide="gallery.isDeleted"
             >
                 <a data-ng-href="#/gallery/{{gallery.id}}/images" class="thumbnail">
-                    <span data-ng-switch="hasImage(gallery)">
-                        <img data-ng-switch-when="false" data-ng-src="/images/placeholder.png"    alt="{{gallery.name}}">
-                        <img data-ng-switch-default      data-ng-src="{{gallery.images[0].thumbnail}}" alt="{{gallery.name}}">
+                    <span data-ng-switch="gallery.thumbnail">
+                        <img data-ng-switch-when="null" data-ng-src="/images/placeholder.png"    alt="{{gallery.name}}">
+                        <img data-ng-switch-default     data-ng-src="{{gallery.thumbnail.thumbnail}}" alt="{{gallery.name}}">
                     </span>
                 </a>
                 {{gallery.name}}

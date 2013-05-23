@@ -10,8 +10,8 @@ describe "GalleryListControllerSpec", ->
         $httpBackend = $injector.get '$httpBackend' 
 
         $httpBackend.expectGET('/api/galleries').respond 200, [
-            {id: 1, name: "Gallery name 1", images: [{"id":"i1","name":"Image name"}]}
-            {id: 2, name: "Gallery name 2", images: []}
+            {id: 1, name: "Gallery name 1", thumbnail: {"id":"i1","name":"Image name"}}
+            {id: 2, name: "Gallery name 2", thumbnail: null}
         ]
 
         $scope = $rootScope.$new()
@@ -32,11 +32,6 @@ describe "GalleryListControllerSpec", ->
         $httpBackend.expectDELETE('/api/galleries/1').respond 200, {}
         $scope.deleteGallery $scope.galleries[0]
         $httpBackend.flush()
-
-    it 'hasImages', ->
-        $httpBackend.flush()
-        expect($scope.hasImage $scope.galleries[1]).toBe false
-        expect($scope.hasImage $scope.galleries[0]).toBe true
 
 
 

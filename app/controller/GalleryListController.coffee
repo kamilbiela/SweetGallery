@@ -1,17 +1,15 @@
-GalleryListController = ($scope, $window, $location, GalleryResource) ->
-    
-    $scope.galleries = GalleryResource.query {}
+GalleryListController = ($scope, $window, $location, $http) ->
+
+    $http.get('/api/galleries').success (data, status) ->
+        $scope.galleries = data
     
     $scope.showButtons = (loopScope) ->
         loopScope.buttonsVisible = true
-
-    $scope.hasImage = (gallery) ->
-       gallery.hasImages()
         
     $scope.hideButtons = (loopScope) ->
         loopScope.buttonsVisible = false
         
     $scope.deleteGallery = (gallery) ->
-        gallery.$remove (gallery, responseHeaders) ->
+        $http({method: 'DELETE', url: "/api/galleries/#{gallery.id}"}).success (data, status) ->
             gallery.isDeleted = true
 

@@ -1,14 +1,17 @@
 <div class="container">
     <div class="span12">
-        <h1>
-            {{gallery.name}}
+        <h1 data-ng-show="isNew">
+            Add new image into {{gallery.name}}
+        </h1>
+        <h1 data-ng-hide="isNew">
+            Edit image {{image.name}} in {{gallery.name}}
         </h1>
         <div class="well-small">
             <form name="form" ng-upload novalidate="novalidate" action="/api/galleries/{{gallery.id}}/images" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <label>Image name</label>
                     <input 
-                        type="text" 
+                        type="text"
                         data-ng-model="image.name"
                         required
                         name="name"

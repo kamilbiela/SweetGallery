@@ -1,6 +1,13 @@
-ImageListController = ($scope, $resource, $window, $location, $routeParams, ImageResource, GalleryResource) ->
+ImageListController = ($scope, $window, $location, $routeParams, $http) ->
     
-    $scope.gallery = GalleryResource.get {id: $routeParams.galleryId }
+    $scope.gallery = {}
+    $scope.images = {}
+
+    $http.get("/api/galleries/#{$routeParams.galleryId}").success (data, status) ->
+        $scope.gallery = data
+
+    $http.get("/api/galleries/#{$routeParams.galleryId}/images").success (data, status) ->
+        $scope.images = data
 
     $scope.showButtons = (loopScope) ->
         loopScope.buttonsVisible = true
@@ -9,6 +16,6 @@ ImageListController = ($scope, $resource, $window, $location, $routeParams, Imag
         loopScope.buttonsVisible = false
         
     $scope.deleteImage = (image) ->
-        image.$remove (image, responseHeaders) ->
+        $http({method: 'DELETE', url: "/api/images/#{image.id}"}).success (data, status) ->
             image.isDeleted = true
 
