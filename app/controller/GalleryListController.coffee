@@ -1,8 +1,14 @@
-GalleryListController = ($scope, $window, $location, $http) ->
+TEST = 1
+GalleryListController = ($scope, $window, $location, $http, Gallery, GalleryMapper) ->
+
+    $scope.testGallery = GalleryMapper.findOne 19
 
     $http.get('/api/galleries').success (data, status) ->
         $scope.galleries = data
     
+    $scope.doTest = () ->
+
+
     $scope.showButtons = (loopScope) ->
         loopScope.buttonsVisible = true
         

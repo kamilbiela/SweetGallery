@@ -1,4 +1,6 @@
-GalleryAddEditController = ($scope, $location, $routeParams, $http) ->
+GalleryAddEditController = ($scope, $location, $routeParams, $http, GalleryMapper) ->
+
+    $scope.testGallery = GalleryMapper.findOne 19
 
     $scope.isNew = !$routeParams.id
     $scope.gallery = {}
